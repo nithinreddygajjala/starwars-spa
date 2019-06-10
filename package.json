@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -14,9 +14,8 @@
   },
   "engines": {
     "node": "10.9",
-    "npm": "3.10.10"
+    "npm": "~6.0.0"
   },
-  "start": "node server.js",
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.0.0",
