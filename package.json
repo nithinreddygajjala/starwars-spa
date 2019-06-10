@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "@angular/cli": "^8.0.2",
     "@angular/compiler-cli": "^8.0.0",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --prod"
   },
   "engines": {
     "node": "10.9",
