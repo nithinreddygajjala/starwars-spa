@@ -1,5 +1,18 @@
 <main role="main" class="container">
-  <h1 class="mt-5">Sticky footer</h1>
-  <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
-  <p>Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
-</main>
+</main> 
+<div class="container form-group ">
+  <h4 class="pb-4">Star Wars Characters</h4>
+  <div class="row pb-3">
+    <div class="col-4">
+    <input type = "text" class="form-control" [(ngModel)]="searchString" (keyup)="test($event)" placeholder="Search...">
+    </div>
+  </div>
+<div class="row ">
+  <div (click)="navigate(x)" *ngFor="let x of filtererdCharacters" class="card col-md-3 col-sm-3 col-12 m-1">
+  <summary><div class="card-body">
+          <h5 class="card-title">{{x.name}}</h5>
+          <p class="card-text">{{x.type}}</p>
+        </div></summary>
+  </div>
+</div>
+</div>
