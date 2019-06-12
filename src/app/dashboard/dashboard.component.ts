@@ -9,10 +9,10 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   constructor(private characterService: CharactersService, private router: Router, private route: ActivatedRoute ) { }
-  private characters: any = [];
-  private searchString: any;
-  private searchReturnedNoResults: any;
-  private filtererdCharacters: any = [];
+  characters: any = [];
+  searchString: any;
+  searchReturnedNoResults: any;
+  filtererdCharacters: any = [];
   ngOnInit() {
 this.characters = this.characterService.characters;
 this.route.queryParams
