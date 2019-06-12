@@ -15,28 +15,24 @@ export class CharacterDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private spinnerService: Ng4LoadingSpinnerService) { }
 
   ngOnInit() {
-    
-    
     this.spinnerService.show();
-    this.characterFromRoute = this.route.snapshot.data['character'] ;
+    this.characterFromRoute = this.route.snapshot.data['character'];
     let data = [];
-    console.log(this.characterFromRoute);
-    for( let i = 0; i< this.characterFromRoute.films.length; i++) {
+    for (let i = 0; i < this.characterFromRoute.films.length; i++) {
       data.push(this.http.get(this.characterFromRoute.films[i]));
     }
     forkJoin(data).subscribe(results => {
       this.spinnerService.hide();
-     this.characterFilms = results;
-     this.characterFilms = this.characterFilms.map((x) => {
-      x.release_date = moment(x.release_date).format('dddd MMMM D Y');
-      return x;
-     });
+      this.characterFilms = results;
+      this.characterFilms = this.characterFilms.map((x) => {
+        x.release_date = moment(x.release_date).format('dddd MMMM D Y');
+        return x;
+      });
     });
   }
 
   navigate() {
     this.router.navigate(['/']);
-
   }
 
 }

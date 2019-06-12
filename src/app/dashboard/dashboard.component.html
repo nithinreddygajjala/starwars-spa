@@ -1,18 +1,25 @@
 <main role="main" class="container">
-</main> 
+</main>
 <div class="container form-group ">
   <h4 class="pb-4">Star Wars Characters</h4>
   <div class="row pb-3">
     <div class="col-4">
-    <input type = "text" class="form-control" [(ngModel)]="searchString" (keyup)="test($event)" placeholder="Search...">
+      <input type="text" class="form-control" [(ngModel)]="searchString" (keyup)="test($event)" placeholder="Search...">
     </div>
   </div>
-<div class="row ">
-  <div (click)="navigate(x)" *ngFor="let x of filtererdCharacters" class="card col-md-3 col-sm-3 col-12 m-1">
-  <summary><div class="card-body">
+  <div *ngIf="searchReturnedNoResults" class="row">
+    <div class="alert alert-danger col-12" role="alert">
+      No Result Found
+    </div>
+  </div>
+  <div class="row ">
+    <div (click)="navigate(x)" *ngFor="let x of filtererdCharacters" class="card col-md-3 col-sm-3 col-12 m-1">
+      <summary>
+        <div class="card-body">
           <h5 class="card-title">{{x.name}}</h5>
           <p class="card-text">{{x.type}}</p>
-        </div></summary>
+        </div>
+      </summary>
+    </div>
   </div>
-</div>
 </div>
