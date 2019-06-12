@@ -1,14 +1,15 @@
 <div class="container form-group ">
   <button (click)="navigate()" type="button" class="btn btn-outline-secondary ">
-    <-- back </button> <h4 class="pt-4">Star Wars Character Details</h4>
-      <div class="pt-4"><span>Character Name :</span> {{characterFromRoute.name}}</div>
-      <div><span>Character Birth year :</span> {{characterFromRoute.birth_year}}</div>
-      <h5 class="pt-2">Appeared In</h5>
-      <div class="row pt-2 pb-4">
-        <div *ngFor="let x of characterFilms" class="card col-md-3 col-sm-3 col-12 m-1">
+    <- back </button> 
+    <h4 class="pt-4 text-center">Star Wars Character Details</h4>
+      <div class="pt-4 text-center"><span class="text-center">Character Name : {{characterFromRoute.name}}</span> </div>
+      <div class="text-center"><span>Character Birth year :</span> {{characterFromRoute.birth_year}}</div>
+      <h5 class="pt-2 text-center">Appeared In</h5>
+      <div class="row p-2 pb-4 justify-content-center">
+        <div *ngFor="let x of characterFilms" class="card col-md-3 col-sm-3 col-12 m-1 ">
           <div class="card-body">
-            <h5 class="card-title">{{x.title}} </h5>
-            <p class="card-text">{{x.release_date}}</p>
+            <h5 class="card-title text-center">{{x.title}} </h5>
+            <p class="card-text text-center">{{x.release_date}}</p>
           </div>
         </div>
       </div>
