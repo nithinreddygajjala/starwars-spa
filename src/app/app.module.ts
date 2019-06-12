@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './error/error.component';
@@ -24,7 +25,8 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [CharactersService],
   bootstrap: [AppComponent]
